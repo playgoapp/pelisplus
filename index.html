@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redireccionando a PelisPlus</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        .countdown {
+            font-size: 2rem;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Redireccionando a PelisPlus</h1>
+        <p>Plataforma de películas y series</p>
+        <p>Serás redirigido en <span class="countdown">5</span> segundos...</p>
+    </div>
+
+    <script>
+        let countdown = 5;
+        const countdownElement = document.querySelector(".countdown");
+
+        const interval = setInterval(() => {
+            countdown--;
+            countdownElement.textContent = countdown;
+
+            if (countdown === 0) {
+                clearInterval(interval);
+                window.location.href = "https://dev-pelisplusonline.pantheonsite.io/";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
